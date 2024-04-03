@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Enrollment No.</th>
+      <th>Name</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = "let s of studentDetails;index as even" [ngClass]="even % 2 === 0 ? 'bg-blue':'bg-white'">
+      <td>{{s.Enroll}}</td>
+      <td>{{s.Name}}</td>
+      <td [ngSwitch]="s.Grade">
+        <span *ngSwitchCase="'A'" [ngStyle]="{'color':'green'}">{{s.Grade}}</span>
+        <span *ngSwitchCase="'F'" [ngStyle]="{'color':'red'}">{{s.Grade}}</span>
+        <span *ngSwitchDefault [ngStyle]="{'color':'blue'}">{{s.Grade}}</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

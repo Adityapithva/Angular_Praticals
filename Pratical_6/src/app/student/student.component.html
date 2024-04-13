@@ -1,0 +1,32 @@
+<div class="solid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>{{ title }}</h3>
+        </div>
+        <div class="panel-body">
+            <input type="number" [(ngModel)]="studentCount">
+            <br>
+            <br>
+            <button (click)="updateTable()">Update Table</button>
+        </div>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students;let i=index;">
+                    <td><input type="text" [(ngModel)]="student.firstName" name="firstName{{i}}"></td>
+                    <td><input type="text" [(ngModel)]="student.lastName" name="lastName{{i}}"></td>
+                    <td><input type="text" [(ngModel)]="student.age" name="age{{i}}"></td>
+                    <td><button (click)="removeStudent(i)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

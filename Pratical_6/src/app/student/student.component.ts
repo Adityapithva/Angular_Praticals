@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-// Define the Student class
 class Student {
   constructor(public firstName: string, public lastName: string, public age: number) {}
 }
@@ -33,6 +31,6 @@ export class StudentComponent implements OnInit {
     }
   }
   removeStudent(index:number){
-    this.students.splice(index, 1);
+    this.students.splice(index, 2);
   }
 }

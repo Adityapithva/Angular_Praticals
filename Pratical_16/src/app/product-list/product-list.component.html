@@ -1,0 +1,27 @@
+<h2>Product List</h2>
+<form (ngSubmit)="addProduct()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" required>
+
+    <label for="description">Description:</label>
+    <input id="description" formControlName="description" required>
+
+    <label for="price">Price:</label>
+    <input id="price" formControlName="price" type="number" required>
+
+    <button type="submit">Add Product</button>
+</form>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.description }}</td>
+        <td>{{ product.price }}</td>
+    </tr>
+</table>

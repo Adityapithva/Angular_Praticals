@@ -1,0 +1,12 @@
+<h2>Product List</h2>
+<input type="text" [formControl]="searchControl" placeholder="Search for products...">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+    </tr>
+    <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+    </tr>
+</table>

@@ -1,0 +1,8 @@
+.main{
+    display: flex;
+}
+.container,.container2,.container3{
+    border: 1px solid black;
+    margin: 3px;
+    padding: 8px;
+}

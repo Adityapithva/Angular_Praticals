@@ -1,0 +1,28 @@
+<h2>Student List</h2>
+<form [formGroup]="studentForm" (ngSubmit)="addStudent()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" required>
+
+    <label for="age">Age:</label>
+    <input id="age" formControlName="age" type="number" required>
+
+    <label for="major">Major:</label>
+    <input id="major" formControlName="major" required>
+
+    <button type="submit">Add Student</button>
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Major</th>
+    </tr>
+    <tr *ngFor="let student of students">
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.age }}</td>
+        <td>{{ student.major }}</td>
+    </tr>
+</table>
